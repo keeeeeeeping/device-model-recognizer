@@ -11,7 +11,7 @@ const deviceModelToFullUrlMap = {
     'SPD3303X-E': 'https://vr.douhuiai.com/v/954703e9k7a998-1751007178.html', // 示例URL，请替换为您的实际URL
     'ABCDEDG':'https://vr.douhuiai.com/v/9gxc5x860ty650-1750684860.html',// TEST ANOTHER TAG OR MODEL
     '123456':'https://www.bilibili.com/',
-
+    'SDS1202X-E':'https://vr.douhuiai.com/v/6mdy33j9f60ec8-1751977875.html/',
     // 请在此处添加更多您的设备型号及其对应的完整URL
 };
 
