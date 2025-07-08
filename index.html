@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备型号识别</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        #video-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #000;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block; /* 移除底部空白 */
+        }
+        canvas {
+            display: none; /* 拍照后用于显示图片并进行OCR，默认隐藏 */
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+            word-break: break-all; /* 防止长字符串溢出 */
+        }
+        #status {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #666;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>设备型号识别</h1>
+
+    <div id="video-container">
+        <video id="video" autoplay playsinline></video>
+    </div>
+    
+    <canvas id="canvas"></canvas>
+
+    <button id="snap">拍照识别</button>
+
+    <div id="status">准备就绪...</div>
+    <div id="result"></div>
+
+    <script src='https://unpkg.com/tesseract.js@5.0.0/dist/tesseract.min.js'></script>
+    <script src="app.js"></script>
+</body>
+</html>
